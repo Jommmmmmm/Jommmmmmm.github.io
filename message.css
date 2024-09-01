@@ -1,0 +1,90 @@
+body {
+    background-color: #f5f5f5; /* Light background color */
+    font-family: Arial, sans-serif; /* Basic font */
+    color: #333; /* Dark text color for readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.message-container {
+    background: #ffe0e0; /* Light pink background color */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    max-width: 90%; /* Make it responsive with a max width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    position: relative; /* Positioning for pseudo-element */
+    overflow: hidden; /* Hide overflow for pseudo-element */
+    text-align: left; /* Align text to the left */
+}
+
+.message-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 192, 203, 0.2) 20%, transparent 40%),
+                radial-gradient(circle, rgba(255, 192, 203, 0.2) 20%, transparent 40%),
+                radial-gradient(circle, rgba(255, 192, 203, 0.2) 20%, transparent 40%),
+                radial-gradient(circle, rgba(255, 192, 203, 0.2) 20%, transparent 40%);
+    background-size: 80px 80px; /* Size of the heart pattern */
+    background-position: 0 0, 40px 40px, 80px 0, 0 80px; /* Positioning of the pattern */
+    background-repeat: repeat; /* Repeat the pattern */
+    z-index: -1; /* Place behind the content */
+    opacity: 0.5; /* Adjust the opacity to make the pattern subtle */
+}
+
+h2 {
+    color: #d32f2f; /* Red color for the header */
+    margin-bottom: 20px;
+    text-align: center; /* Ensure header aligns to the left */
+    font-size: 1.8em; /* Responsive font size */
+}
+
+p {
+    margin-bottom: 15px; /* Space between paragraphs */
+    line-height: 1.6; /* Increase line-height for better readability */
+    text-align: left; /* Align paragraphs to the left */
+    font-size: 1em; /* Responsive font size */
+}
+
+p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .message-container {
+        padding: 15px; /* Adjust padding for smaller screens */
+        max-width: 95%; /* Increase max width on smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust header font size for smaller screens */
+    }
+
+    p {
+        font-size: 0.9em; /* Adjust paragraph font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .message-container {
+        padding: 10px; /* Further adjust padding for very small screens */
+        max-width: 100%; /* Full width on very small screens */
+    }
+
+    h2 {
+        font-size: 1.2em; /* Adjust header font size for very small screens */
+    }
+
+    p {
+        font-size: 0.8em; /* Adjust paragraph font size for very small screens */
+    }
+}
